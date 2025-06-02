@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Task</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #e0e0e0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .task-modal {
+      background-color: #fff;
+      width: 500px;
+      display: flex;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .left-section {
+      flex: 1;
+      padding: 20px;
+      border-right: 1px solid #eee;
+    }
+
+    .left-section h4 {
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .description-box {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: none;
+      font-size: 13px;
+    }
+
+    .char-limit {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .right-section {
+      flex: 1;
+      padding: 20px;
+      background-color: #f9f9ff;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .select-box {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .select-box select {
+      width: 100%;
+      padding: 8px;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    .create-task-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #318bfb;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .create-task-btn:hover {
+      background-color: #216fe0;
+    }
+  </style>
+</head>
+<body>
+  <div class="task-modal">
+    <div class="left-section">
+      <h4>CodonLIMS</h4>
+      <textarea class="description-box" placeholder="Add Description" maxlength="2000"></textarea>
+      <div class="char-limit">0 / 2000</div>
+    </div>
+    <div class="right-section">
+      <button class="close-btn">&times;</button>
+      <div class="select-box">
+        <select>
+          <option disabled selected>Assignee(s)</option>
+          <option>John Doe</option>
+          <option>Jane Smith</option>
+        </select>
+      </div>
+      <div class="select-box">
+        <select>
+          <option disabled selected>Severity*</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+      <div class="select-box">
+        <select>
+          <option disabled selected>Status*</option>
+          <option>Open</option>
+          <option>In Progress</option>
+          <option>Closed</option>
+        </select>
+      </div>
+    <!--  <button class="create-task-btn">Create Task</button>-->
+      <button class="create-task-btn" onclick="createTask()">Create Task</button>
+    </div>
+  </div>
+
+  <script>
+    const textarea = document.querySelector('.description-box');
+    const charLimit = document.querySelector('.char-limit');
+
+    textarea.addEventListener('input', () => {
+      charLimit.textContent = `${textarea.value.length} / 2000`;
+    });
+    function closeTask() {
+    alert("Close button clicked (implement modal closing here).");
+  }
+
+  function createTask() {
+    alert("Task Created!");
+    window.location.href = "Dashboard.html";
+  }
+  </script>
+</body>
+</html>
