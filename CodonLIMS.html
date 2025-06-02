@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodonLIMS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: white;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 70px;
+      background-color: #1B2A47;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .sidebar .icon {
+      width: 40px;
+      height: 40px;
+      background-color: #4DA6FF;
+      border-radius: 50%;
+      margin: 20px 0;
+    }
+
+    .main {
+      margin-left: 70px;
+      padding: 20px 30px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .search-add {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-add input {
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .search-add button {
+      background-color: #4DA6FF;
+      color: white;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .board {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .column {
+      background-color: #EDF5FE;
+      padding: 10px;
+      border-radius: 8px;
+      flex: 1;
+      min-height: 400px;
+    }
+
+    .column h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task {
+      background: white;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      border-left: 5px solid #ccc;
+    }
+
+    .task span {
+      display: block;
+      color: gray;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .task[data-id="5"] { border-left-color: gold; }
+    .task[data-id="4"] { border-left-color: #33cc99; }
+    .task[data-id="3"] { border-left-color: red; }
+    .task[data-id="2"] { border-left-color: #33ccff; }
+    .task[data-id="1"] { border-left-color: #ff66cc; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="icon"></div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h2>CodonLIMS</h2>
+      <div class="search-add">
+        <input type="text" placeholder="Search by ID" />
+        <a href="Add Task1.html">
+        <button>Add Task</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="column">
+        <h3>TODO <span>5</span></h3>
+        <div class="task" data-id="5">#5 Design high-fidelity mockups for task creation modal</div>
+        <div class="task" data-id="4">#4 Design high-fidelity mockups for task creation modal</div>
+        <div class="task" data-id="3">#3 Implement CRUD endpoints for Kanban tasks <span>TV</span></div>
+        <div class="task" data-id="2">#2 Design high-fidelity mockups for task creation modal</div>
+        <div class="task" data-id="1">#1 Align with marketing on launch timeline <span>KJ</span></div>
+      </div>
+
+      <div class="column">
+        <h3>IN PROGRESS <span>0</span></h3>
+      </div>
+
+      <div class="column">
+        <h3>TESTING <span>0</span></h3>
+      </div>
+
+      <div class="column">
+        <h3>COMPLETED <span>0</span></h3>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
